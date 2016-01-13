@@ -13,6 +13,7 @@ class DashboardManifest
     :companies,
     :products,
     :profiles,
+    :announcements
   ]
 
   # `ROOT_DASHBOARD`

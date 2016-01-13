@@ -8,5 +8,16 @@ Rails.application.routes.draw do
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
-  root 'welcome#index'
+  # root 'welcome#index'
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :companies, only: [:show] do
+        get '/profile', to: 'profiles#show', on: :member
+        resources :products, only: [:show, :index]
+        resources :announcements, only: [:show, :index]
+      end
+    end
+  end
+
 end

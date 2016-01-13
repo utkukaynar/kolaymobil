@@ -14,6 +14,7 @@ gem 'devise'
 gem 'puma'
 gem 'administrate'
 gem 'annotate'
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
 
 group :development, :test do
   gem 'byebug'
