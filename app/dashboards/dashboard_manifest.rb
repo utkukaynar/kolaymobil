@@ -9,7 +9,10 @@ class DashboardManifest
   # To show or hide dashboards, add or remove the model name from this list.
   # Dashboards returned from this method must be Rails models for Administrate
   # to work correctly.
-    DASHBOARDS = [:users,:companies,:products,:profiles,:announcements]
+  DASHBOARDS = [:users, :companies, :products, :profiles, :announcements]
+  
+  ADMIN_DASHBOARDS = [:users, :companies, :products, :profiles, :announcements]
+  USER_DASHBOARDS = [:products, :profiles, :announcements]
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed
@@ -17,5 +20,5 @@ class DashboardManifest
   #
   # This dashboard will likely be the first page that admins see
   # when they log into the dashboard.
-  ROOT_DASHBOARD = DASHBOARDS.first
+  ROOT_DASHBOARD = 'products'
 end

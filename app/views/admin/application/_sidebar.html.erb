@@ -1,0 +1,33 @@
+<%#
+# Sidebar
+
+This partial is used to display the sidebar in Administrate.
+By default, the sidebar contains navigation links
+for all resources in the admin dashboard,
+as defined by the DashboardManifest.
+%>
+
+<h3>Kolaymobil</h3>
+<ul class="sidebar__list">
+  <% if current_user.admin? %>
+    <% DashboardManifest::ADMIN_DASHBOARDS.each do |resource| %>
+      <li>
+        <%= link_to(
+          display_resource_name(resource),
+          [Administrate::NAMESPACE, resource],
+          class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
+        ) %>
+      </li>
+    <% end %>
+  <% else %>  
+    <% DashboardManifest::USER_DASHBOARDS.each do |resource| %>
+      <li>
+        <%= link_to(
+          display_resource_name(resource),
+          [Administrate::NAMESPACE, resource],
+          class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
+        ) %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
