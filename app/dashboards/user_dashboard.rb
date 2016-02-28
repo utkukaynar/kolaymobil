@@ -23,6 +23,8 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     admin: Field::Boolean,
+    password: PasswordField,
+    password_confirmation: PasswordField
   }
 
   # COLLECTION_ATTRIBUTES
@@ -31,15 +33,21 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :company,
     :id,
+    :company,
     :email,
-    :encrypted_password,
+    #:encrypted_password,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :company,
+    :email,
+    :password,
+    :password_confirmation,
+    :admin,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
@@ -47,15 +55,17 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :company,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
+    :password,
+    :password_confirmation,
+    # :encrypted_password,
+    # :reset_password_token,
+    # :reset_password_sent_at,
+    # :remember_created_at,
+    # :sign_in_count,
+    # :current_sign_in_at,
+    # :last_sign_in_at,
+    # :current_sign_in_ip,
+    # :last_sign_in_ip,
     :admin,
   ]
 
