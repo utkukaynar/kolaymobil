@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'puma'
-gem 'administrate'
+gem 'administrate', github: 'thoughtbot/administrate'
 gem 'annotate'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
