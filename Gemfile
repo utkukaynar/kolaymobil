@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.1.2'
 
 gem 'rails', '4.2.3'
 gem 'pg'
@@ -17,6 +17,7 @@ gem 'annotate'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
 gem 'wicked', '~> 1.2', '>= 1.2.1'
+gem 'rails_12factor'
 
 
 
