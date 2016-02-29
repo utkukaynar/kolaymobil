@@ -5,10 +5,8 @@ module Admin
     #
 
     def index
-      super 
-     
-      	 @resources = current_user.company.products
-   
+      super
+    	@resources = current_user.company.products
     end
 
     # Define a custom finder by overriding the `find_resource` method:
@@ -19,7 +17,7 @@ module Admin
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
   end
-  
+
 
 
 end

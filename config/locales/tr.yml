@@ -51,6 +51,10 @@ tr:
         company: Şirket
         title: Başlık
         text: Metin
+      company:
+        name: Adı
+        profile: Profil
+        created_at: Ekleme tarihi
   actions:
     new: Yeni
     edit: Düzenle
