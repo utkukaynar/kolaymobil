@@ -17,6 +17,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     profile: Field::HasOne,
     products: Field::HasMany,
     announcements: Field::HasMany,
+    user_id: HiddenField
   }
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +40,7 @@ class CompanyDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user_id,
     :name,
     :address,
     :phone,
