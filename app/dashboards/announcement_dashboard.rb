@@ -14,6 +14,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
     text: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    company_id: CompanyHiddenField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -36,7 +37,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :company,
+    :company_id,
     :title,
     :text,
   ]

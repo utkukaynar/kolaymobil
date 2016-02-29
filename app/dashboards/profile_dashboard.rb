@@ -16,6 +16,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     contact_info: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    company_id: CompanyHiddenField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -38,7 +39,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :company,
+    :company_id,
     :about,
     :mission,
     :vision,

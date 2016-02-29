@@ -6,9 +6,7 @@ module Admin
 
     def index
       super 
-     
       	 @resources = current_user.company.products
-   
     end
 
     # Define a custom finder by overriding the `find_resource` method:
