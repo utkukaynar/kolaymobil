@@ -16,6 +16,9 @@ gem 'administrate'
 gem 'annotate'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
+gem 'wicked', '~> 1.2', '>= 1.2.1'
+
+
 
 group :development, :test do
   gem 'byebug'
@@ -23,5 +26,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'spring'
   gem 'quiet_assets', '~> 1.1'
+  gem 'guard-ctags-bundler'
 end
 

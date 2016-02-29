@@ -25,11 +25,11 @@ tr:
       user:
         one: Kullanıcı
         other: Kullanıcılar
-      company: 
+      company:
         one: Şirket
         other: Şirketler
       profile: Profil
-      product: 
+      product:
         one: Ürün
         other: Ürünler
       announcement:
@@ -38,6 +38,20 @@ tr:
     attributes:
       user:
         admin: Yönetici
-      
-      
-      
+        company: Şirket
+      product:
+        company: Şirket
+        name: Ürün Adı
+        description: Ürün Tanımı
+      profile:
+        company: Şirket
+        about: Hakkımızda
+        mission: Misyon
+      announcement:
+        company: Şirket
+        title: Başlık
+        text: Metin
+  actions:
+    new: Yeni
+    edit: Düzenle
+    save: Kaydet
