@@ -1,6 +1,6 @@
 require "administrate/fields/base"
 
-class HiddenField < Administrate::Field::Base
+class CompanyHiddenField < Administrate::Field::Base
   def to_s
     data
   end

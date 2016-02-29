@@ -17,7 +17,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     profile: Field::HasOne,
     products: Field::HasMany,
     announcements: Field::HasMany,
-    user_id: HiddenField
+    user_id: UserHiddenField,
   }
 
   # COLLECTION_ATTRIBUTES

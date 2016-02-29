@@ -12,7 +12,7 @@ class DashboardManifest
   DASHBOARDS = [:users, :companies, :products, :profiles, :announcements]
   
   ADMIN_DASHBOARDS = [:users, :companies, :products, :profiles, :announcements]
-  USER_DASHBOARDS = [:products, :profiles, :announcements]
+  USER_DASHBOARDS = [ :companies, :products, :profiles, :announcements]
 
   # `ROOT_DASHBOARD`
   # the name of the dashboard that will be displayed
