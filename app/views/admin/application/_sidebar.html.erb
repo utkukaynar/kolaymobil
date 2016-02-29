@@ -1,11 +1,11 @@
 <%#
-# Sidebar
+    # Sidebar
 
-This partial is used to display the sidebar in Administrate.
-By default, the sidebar contains navigation links
+  This partial is used to display the sidebar in Administrate.
+  By default, the sidebar contains navigation links
 for all resources in the admin dashboard,
-as defined by the DashboardManifest.
-%>
+    as defined by the DashboardManifest.
+  %>
 
 <h3>Kolaymobil</h3>
 <ul class="sidebar__list">
@@ -17,17 +17,23 @@ as defined by the DashboardManifest.
           [Administrate::NAMESPACE, resource],
           class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
         ) %>
-      </li>
-    <% end %>
-  <% else %>  
-    <% DashboardManifest::USER_DASHBOARDS.each do |resource| %>
-      <li>
-        <%= link_to(
-          display_resource_name(resource),
-          [Administrate::NAMESPACE, resource],
-          class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
-        ) %>
-      </li>
-    <% end %>
+    </li>
   <% end %>
+<% else %>
+  <% DashboardManifest::USER_DASHBOARDS.each do |resource| %>
+    <li>
+      <%= link_to(
+        display_resource_name(resource),
+        [Administrate::NAMESPACE, resource],
+        class: "sidebar__link sidebar__link--#{nav_link_state(resource)}"
+      ) %>
+  </li>
+<% end %>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to t('devise.shared.sign_out'), destroy_user_session_path, :method => 'delete', class: 'sidebar__link sidebar__link--inactive' %>
+    </li>
+  <%end %>
+
 </ul>
