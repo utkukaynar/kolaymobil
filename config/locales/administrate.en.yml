@@ -1,23 +1,24 @@
 ---
-en:
+tr:
   administrate:
     actions:
-      confirm: Are you sure?
-      destroy: Yoket
+      confirm: Emin misiniz?
+      destroy: Kaldır
       edit: Düzenle
       show: Göster
+      new: Yeni
     controller:
       create:
-        success: "%{resource} was successfully created."
+        success: "%{resource} başarıyla oluşturuldu."
       destroy:
-        success: "%{resource} was successfully destroyed."
+        success: "%{resource} başarıyla kaldırıldı."
       update:
-        success: "%{resource} was successfully updated."
+        success: "%{resource} başarıyla güncellendi."
     fields:
       has_many:
-        more: Showing %{count} of %{total_count}
-        none: None
+        more: "%{total_count} toplam kaydın %{count} tanesi gösteriliyor."
+        none: Yok
       polymorphic:
-        not_supported: Polymorphic relationship forms are not supported.
+        not_supported: Çoklu ilişki formları desteklenmemektedir.
       has_one:
-        not_supported: HasOne relationship forms are not supported.
+        not_supported: HasOne ilişki formları desteklenmemektedir..
