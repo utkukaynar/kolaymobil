@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProductDashboard < Administrate::BaseDashboard
+class CategoryDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,10 +9,9 @@ class ProductDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     company: Field::BelongsTo,
-    category: Field::BelongsTo,
+    products: Field::HasMany,
     id: Field::Number,
     name: Field::String,
-    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     company_id: CompanyHiddenField,
@@ -25,29 +24,34 @@ class ProductDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :company,
+    :products,
     :id,
     :name,
-    :description,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :company,
+    :products,
+    :id,
+    :name,
+    :created_at,
+    :updated_at,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
     :company_id,
     :name,
-    :description,
   ]
 
-  # Overwrite this method to customize how products are displayed
+  # Overwrite this method to customize how categories are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(product)
-    "#{product.company.name} - Ürün ##{product.name}"
+  def display_resource(category)
+   "#{category.name}"
   end
 end

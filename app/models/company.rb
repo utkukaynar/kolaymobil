@@ -11,6 +11,7 @@
 #
 
 class Company < ActiveRecord::Base
+  has_many :categories
   has_many :products
   has_one :profile
   has_many :announcements
