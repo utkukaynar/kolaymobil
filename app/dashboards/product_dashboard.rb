@@ -16,6 +16,7 @@ class ProductDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     company_id: CompanyHiddenField,
+    image: ProductAttachmentField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -42,6 +43,7 @@ class ProductDashboard < Administrate::BaseDashboard
     :company_id,
     :name,
     :description,
+    :image,
   ]
 
   # Overwrite this method to customize how products are displayed

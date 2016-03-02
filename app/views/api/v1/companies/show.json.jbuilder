@@ -1,1 +1,1 @@
-json.extract! @company, :id, :name, :address, :phone
+json.extract! @company, :id, :name, :address, :phone, :logo
