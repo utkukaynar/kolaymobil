@@ -31,5 +31,14 @@ module Kolaymobil
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    
+    config.middleware.insert_before(0, "Rack::Cors", logger: (-> { Rails.logger })) do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :patch, :options, :delete, :put, :head]
+      end 
+    end
+  
   end
 end

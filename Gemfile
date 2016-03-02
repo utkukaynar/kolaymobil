@@ -18,7 +18,8 @@ gem 'paperclip', '~> 4.3', '>= 4.3.2'
 gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
 gem 'wicked', '~> 1.2', '>= 1.2.1'
 gem 'rails_12factor'
-
+# Rack Cors for Cross Origin Sharing
+gem 'rack-cors', :require => 'rack/cors'
 
 
 group :development, :test do
