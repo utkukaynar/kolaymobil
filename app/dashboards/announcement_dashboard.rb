@@ -15,6 +15,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     company_id: CompanyHiddenField,
+    image: AnnouncementAttachmentField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -40,6 +41,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
     :company_id,
     :title,
     :text,
+    :image,
   ]
 
   # Overwrite this method to customize how announcements are displayed

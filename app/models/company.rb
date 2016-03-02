@@ -16,4 +16,7 @@ class Company < ActiveRecord::Base
   has_one :profile
   has_many :announcements
   belongs_to :user
+
+  has_attached_file :logo, styles: { medium: "300x300>", large: "600x600>" }
+  validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
 end

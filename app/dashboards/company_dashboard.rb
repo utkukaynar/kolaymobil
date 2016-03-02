@@ -18,6 +18,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     products: Field::HasMany,
     announcements: Field::HasMany,
     user_id: UserHiddenField,
+    logo: CompanyAttachmentField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -44,6 +45,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     :name,
     :address,
     :phone,
+    :logo,
   ]
 
   # Overwrite this method to customize how companies are displayed

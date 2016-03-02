@@ -1,1 +1,1 @@
-json.extract! @announcement, :id, :title, :text
+json.extract! @announcement, :id, :title, :text , :image
