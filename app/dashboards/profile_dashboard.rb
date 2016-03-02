@@ -17,6 +17,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     company_id: CompanyHiddenField,
+    image: ProfileAttachmentField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -44,6 +45,7 @@ class ProfileDashboard < Administrate::BaseDashboard
     :mission,
     :vision,
     :contact_info,
+    :image,
   ]
 
   # Overwrite this method to customize how profiles are displayed

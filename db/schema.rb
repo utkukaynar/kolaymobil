@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301124841) do
+ActiveRecord::Schema.define(version: 20160302123337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,12 @@ ActiveRecord::Schema.define(version: 20160301124841) do
     t.string   "title"
     t.text     "text"
     t.integer  "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "announcements", ["company_id"], name: "index_announcements_on_company_id", using: :btree
@@ -36,12 +40,16 @@ ActiveRecord::Schema.define(version: 20160301124841) do
   add_index "categories", ["company_id"], name: "index_categories_on_company_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "address",    null: false
-    t.string   "phone",      null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",              null: false
+    t.string   "address",           null: false
+    t.string   "phone",             null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "user_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
@@ -50,9 +58,13 @@ ActiveRecord::Schema.define(version: 20160301124841) do
     t.string   "name"
     t.text     "description"
     t.integer  "company_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "category_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
@@ -64,8 +76,12 @@ ActiveRecord::Schema.define(version: 20160301124841) do
     t.text     "vision"
     t.integer  "company_id"
     t.text     "contact_info"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "profiles", ["company_id"], name: "index_profiles_on_company_id", using: :btree
