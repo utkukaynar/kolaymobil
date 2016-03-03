@@ -10,9 +10,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     company: Field::BelongsTo,
     id: Field::Number,
-    about: Field::Text,
-    mission: Field::Text,
-    vision: Field::Text,
+    description: Field::Text,
     contact_info: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -28,8 +26,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :company,
     :id,
-    :about,
-    :mission,
+    :description,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
@@ -41,9 +38,7 @@ class ProfileDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :company_id,
-    :about,
-    :mission,
-    :vision,
+    :description,
     :contact_info,
     :image,
   ]
