@@ -4,7 +4,7 @@ json.announcement do
   json.title @announcement.title
   json.text @announcement.text
   json.company_id @announcement.company_id
-  json.image image_url(@announcement.image)
+  json.image image_url(@announcement.image(:large))
 
 end
 
