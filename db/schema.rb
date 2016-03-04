@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303111745) do
+ActiveRecord::Schema.define(version: 20160304091125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,15 @@ ActiveRecord::Schema.define(version: 20160303111745) do
 
   add_index "categories", ["company_id"], name: "index_categories_on_company_id", using: :btree
 
+  create_table "colors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "name_ionic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string   "name",              null: false
-    t.string   "address",           null: false
-    t.string   "phone",             null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "user_id"
@@ -73,16 +78,37 @@ ActiveRecord::Schema.define(version: 20160303111745) do
   create_table "profiles", force: :cascade do |t|
     t.integer  "company_id"
     t.text     "contact_info"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.text     "description"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   add_index "profiles", ["company_id"], name: "index_profiles_on_company_id", using: :btree
+
+  create_table "settings", force: :cascade do |t|
+    t.integer  "company_id"
+    t.integer  "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "settings", ["color_id"], name: "index_settings_on_color_id", using: :btree
+  add_index "settings", ["company_id"], name: "index_settings_on_company_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -109,4 +135,6 @@ ActiveRecord::Schema.define(version: 20160303111745) do
   add_foreign_key "products", "categories"
   add_foreign_key "products", "companies"
   add_foreign_key "profiles", "companies"
+  add_foreign_key "settings", "colors"
+  add_foreign_key "settings", "companies"
 end

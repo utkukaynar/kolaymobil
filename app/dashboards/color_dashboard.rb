@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProfileDashboard < Administrate::BaseDashboard
+class ColorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,22 +8,12 @@ class ProfileDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    company: Field::BelongsTo,
+    settings: Field::HasMany,
     id: Field::Number,
-    phone: Field::String,
-    address: Field::Text,
-    email: Field::String,
-    facebook: Field::String,
-    twitter: Field::String,
-    latitude: Field::String,
-    longitude: Field::String,
-    description: Field::Text,
-    contact_info: Field::Text,
+    name: Field::String,
+    name_ionic: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    company_id: CompanyHiddenField,
-    image: ProfileAttachmentField,
-    background: BackgroundField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -32,50 +22,36 @@ class ProfileDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :settings,
     :id,
-    :company,
-    :description,
+    :name,
+    :name_ionic,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES =  [
+  SHOW_PAGE_ATTRIBUTES = [
+    :settings,
     :id,
-    :company,
-    :company_id,
-    :phone,
-    :address,
-    :email,
-    :facebook,
-    :twitter,
-    :latitude,
-    :longitude,
-    :description,
-    :contact_info,
+    :name,
+    :name_ionic,
+    :created_at,
+    :updated_at,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :company_id,
-    :phone,
-    :address,
-    :email,
-    :facebook,
-    :twitter,
-    :description,
-    :contact_info,
-    :latitude,
-    :longitude,
-    :image,
-    :background,
+    :settings,
+    :name,
+    :name_ionic,
   ]
 
-  # Overwrite this method to customize how profiles are displayed
+  # Overwrite this method to customize how colors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(profile)
-  #   "Profile ##{profile.id}"
-  # end
+  def display_resource(color)
+    "#{color.name}"
+  end
 end

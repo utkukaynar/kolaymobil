@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class ProfileDashboard < Administrate::BaseDashboard
+class SettingDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,22 +8,11 @@ class ProfileDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    company: Field::BelongsTo,
+    company_id: CompanyHiddenField,
+    color: Field::BelongsTo,
     id: Field::Number,
-    phone: Field::String,
-    address: Field::Text,
-    email: Field::String,
-    facebook: Field::String,
-    twitter: Field::String,
-    latitude: Field::String,
-    longitude: Field::String,
-    description: Field::Text,
-    contact_info: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    company_id: CompanyHiddenField,
-    image: ProfileAttachmentField,
-    background: BackgroundField,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -33,25 +22,18 @@ class ProfileDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :company,
-    :description,
+    :company_id,
+    :color,
+    :created_at,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES =  [
+  SHOW_PAGE_ATTRIBUTES = [
+    :color,
     :id,
-    :company,
-    :company_id,
-    :phone,
-    :address,
-    :email,
-    :facebook,
-    :twitter,
-    :latitude,
-    :longitude,
-    :description,
-    :contact_info,
+    :created_at,
+    :updated_at,
   ]
 
   # FORM_ATTRIBUTES
@@ -59,23 +41,13 @@ class ProfileDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :company_id,
-    :phone,
-    :address,
-    :email,
-    :facebook,
-    :twitter,
-    :description,
-    :contact_info,
-    :latitude,
-    :longitude,
-    :image,
-    :background,
+    :color,
   ]
 
-  # Overwrite this method to customize how profiles are displayed
+  # Overwrite this method to customize how settings are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(profile)
-  #   "Profile ##{profile.id}"
+  # def display_resource(setting)
+  #   "Setting ##{setting.id}"
   # end
 end
