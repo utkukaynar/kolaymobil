@@ -8,3 +8,8 @@ json.product do
  json.image image_url(@product.image(:large))
  
 end
+
+json.setting do
+ json.name_ionic @company.setting.color.name_ionic
+
+end

@@ -7,3 +7,8 @@ json.company do
   json.logo image_url(@company.logo(:large))
 
 end
+
+json.setting do
+  json.name_ionic @company.setting.color.name_ionic
+
+end
