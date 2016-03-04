@@ -8,4 +8,9 @@ json.announcement do
 
 end
 
+json.setting do
+  json.name_ionic @company.setting.color.name_ionic
+
+end
+
 

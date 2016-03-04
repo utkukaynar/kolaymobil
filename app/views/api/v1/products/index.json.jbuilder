@@ -8,3 +8,8 @@ json.products @products do |product|
   json.image image_url(product.image(:medium))
 
 end
+
+json.setting do
+  json.name_ionic @company.setting.color.name_ionic
+
+end
