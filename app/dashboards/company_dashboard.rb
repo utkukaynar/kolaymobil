@@ -10,8 +10,6 @@ class CompanyDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    address: Field::String,
-    phone: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     profile: Field::HasOne,
@@ -48,8 +46,6 @@ class CompanyDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user_id,
     :name,
-    :address,
-    :phone,
     :logo,
   ]
 
