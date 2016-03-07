@@ -35,26 +35,57 @@ tr:
       announcement:
         one: Duyuru
         other: Duyurular
+      setting: 
+        one: Ayar
+        other: Ayarlar
+      category:
+        one: Kategori
+        other: Kategoriler
+      color:
+        one: Renk
+        other: Renkler     
     attributes:
       user:
         admin: Yönetici
         company: Şirket
       product:
         company: Şirket
+        category: Kategori
+        category_id: Kategori
         name: Ürün Adı
         description: Ürün Tanımı
       profile:
         company: Şirket
-        about: Hakkımızda
-        mission: Misyon
+        phone: Telefon
+        address: Adres
+        latitude: Enlem
+        longitude: Boylam
+        description: Açıklama
+        contact_info: Ek Telefon
+        image: Resim
+        background: Arka Plan
       announcement:
         company: Şirket
         title: Başlık
         text: Metin
+        image: Resim
       company:
         name: Adı
         profile: Profil
         created_at: Ekleme tarihi
+      category:
+        name: Kategori Adı
+        company: Şirket
+        products: ürünler
+        created_at: Ekleme tarihi
+      setting:
+        company: Şirket 
+        color: Renk
+        color_id: Renk
+        created_at: Ekleme tarihi
+      color:
+        name: Renk Adı
+        name_ionic: Teknik Adı
   actions:
     new: Yeni
     edit: Düzenle

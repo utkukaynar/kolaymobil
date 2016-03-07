@@ -22,28 +22,27 @@ class ColorDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :settings,
     :id,
     :name,
     :name_ionic,
+    :settings,
   ]
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :settings,
     :id,
     :name,
     :name_ionic,
     :created_at,
     :updated_at,
+    :settings,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :settings,
     :name,
     :name_ionic,
   ]

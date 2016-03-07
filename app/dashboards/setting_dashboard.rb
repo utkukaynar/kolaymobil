@@ -8,6 +8,7 @@ class SettingDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    company: Field::BelongsTo,
     company_id: CompanyHiddenField,
     color: Field::BelongsTo,
     id: Field::Number,
@@ -22,7 +23,7 @@ class SettingDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :company_id,
+    :company,
     :color,
     :created_at,
   ]
