@@ -20,6 +20,6 @@ as defined by the routes in the `admin/` namespace
     </li>
   <% end %>
   <li>
-    <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete, class: 'sidebar__link'%>
+    <%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete, class: 'sidebar__link',data: {:confirm => 'Çıkmak istediğinize emin misiniz?'}%>
   </li>
 </ul>
